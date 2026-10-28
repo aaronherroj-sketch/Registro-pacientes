@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
-/** VISTA: formulario "Registrar paciente". No contiene lógica de negocio. */
+//Registra paciente
 public class VistaRegistroPaciente extends JFrame {
 
     // Datos personales
@@ -69,7 +69,7 @@ public class VistaRegistroPaciente extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    // ---------- Construcción de paneles ----------
+    // paneles
 
     private JPanel crearPanelDatosPersonales() {
         JPanel panel = nuevoPanel("Datos personales");
@@ -118,7 +118,7 @@ public class VistaRegistroPaciente extends JFrame {
         return panel;
     }
 
-    /** Agrega una etiqueta con su campo debajo, en la celda (columna, fila). */
+    //etiqueta con su campo debajo, en la celda (columna, fila)
     private void agregarCampo(JPanel panel, int columna, int fila, String etiqueta, JComponent campo) {
         GridBagConstraints restricciones = new GridBagConstraints();
         restricciones.gridx = columna;
@@ -133,7 +133,7 @@ public class VistaRegistroPaciente extends JFrame {
         panel.add(celda, restricciones);
     }
 
-    // ---------- Métodos que usa el controlador ----------
+    // métodos que usa el controlador
 
     public String obtenerTipoDocumento() { return (String) cmbTipoDocumento.getSelectedItem(); }
     public String obtenerNumeroDocumento() { return txtNumeroDocumento.getText().trim(); }
@@ -182,7 +182,7 @@ public class VistaRegistroPaciente extends JFrame {
         JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    // ---------- Escuchas de eventos ----------
+    // escucha de eventos
 
     public void agregarEscuchaGuardar(ActionListener escucha) { botonGuardar.addActionListener(escucha); }
     public void agregarEscuchaCancelar(ActionListener escucha) { botonCancelar.addActionListener(escucha); }
